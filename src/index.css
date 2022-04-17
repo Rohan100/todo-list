@@ -1,0 +1,34 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html,body{
+    height: 100%;
+    font-family: Helvetica, Arial, sans-seri;
+}
+.main{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+@media screen and (max-width:600px){
+    #app{
+        flex-direction: column;
+    }
+}
+nav{
+    padding: 0.5em;
+    color: white;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav span{
+    margin-left: 0.4rem;
+}
+#app{
+    flex-grow: 1;
+    display: flex;
+    overflow-y: auto;
+}

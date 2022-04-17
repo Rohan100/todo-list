@@ -1,0 +1,218 @@
+.project-list{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width : 25%;
+    overflow-y: auto;
+    background-color:rgb(207, 207, 207);
+    color: rgb(36, 36, 36);
+    gap: 10px;
+    padding: 1rem 0px;
+    border-right: 1px solid rgb(234, 217, 217);
+}
+.menu{
+    margin-left: auto;
+}
+@media screen and (max-width:600px) {
+    .project-list{
+        display: none;
+        width: 100%;
+        max-height: 50%;
+        background-color: white;
+        z-index: 1;
+    }
+    .task-list{
+        width: 100%!important;
+        height: 100%;
+    }
+}
+.show{
+    display: flex;
+}
+.task-list{
+    display: flex;
+    flex-direction: column;
+    width : 75%;
+    align-items: center;
+    padding: 5px 0px;
+    overflow-y: auto;
+    gap: 0.4rem;
+}
+.task-name{
+    width: 90%;
+    text-transform: capitalize;
+}
+.project{
+    width: 80%;
+    padding:5px 10px;
+    border-radius: 5px;
+    text-transform: capitalize;
+}
+.project-name i{
+    margin-right: 8px;
+}
+.project:hover,.active{
+    background-color: rgba(108, 108, 108, 0.6);
+    font-weight: 700;
+}
+.add-button:hover{
+    background-color: rgba(165, 163, 163, 0.4);
+}
+.add-button {
+    width: 80%;
+    padding:5px 10px;
+    border-radius: 5px;
+}
+.hide{
+    display: none !important;
+}
+.new-project-input div{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.new-project-input div > input{
+    width: 100%;
+    font-size: larger;
+    padding:0.1em 0.2em;
+}
+.new-project-input div button{
+    font-size: 25px;
+    padding: 0em 0.2em;
+    border: 0px;
+    border-radius: 0.2em;   
+}
+.create,.cancel{
+    color: white;
+}
+.create{
+    background-color: #007bff;
+}
+.cancel{
+    background-color:#5a6268;
+}
+.cancel:focus{
+    box-shadow: 0 0 0 0.2rem rgb(108 117 125 / 50%);
+}
+.cancel:active{
+    color: #fff;
+    background-color: #545b62;
+    border-color: #4e555b;
+}
+.create:active{
+    color: #fff;
+    background-color: #0062cc;
+    border-color: #005cbf;
+}
+.create:focus{
+    box-shadow: 0 0 0 0.2rem rgb(0 123 255 / 50%);
+}
+.task{
+    width: 90%;
+    padding:0.4em 0.5em;
+    border-radius: 0.5em;
+    display: flex;
+    justify-content: space-between;
+}
+.task:hover{
+    background-color: rgba(108, 108, 108, 0.6);
+}
+.new-task-btn{
+    width: 100%;
+}
+.add-task-btn{
+    width: 90%;
+    padding:0.4em 0.5em;
+    margin: auto;
+    cursor: pointer;
+}
+.add-task-btn >h3>span{
+   margin-left: 10px ;
+}
+.task-form{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    align-items: center;
+    border: 1px solid black;
+    padding:0.5em 0 ;
+    border-radius: 0.5em;
+    background-color: rgba(108, 108, 108, 0.6);
+}
+.task-form input{
+    width: 95%;
+    padding: 0.2em 0.3em;
+    font-size: larger;
+}
+.task-form >div{
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+}
+.task-form > div > button{
+    padding: 0.3em 0.6em;
+    font-size: 18px;
+    border-radius: 0.3em;
+    border:0px;
+}
+.task,.project{
+    position: relative;
+}
+.remove,.remove-project{
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    display: none;
+    cursor: pointer;
+    z-index: 1;
+}
+.remove-project{
+    left: 90%;
+}
+.task:hover .remove,.project:hover .remove-project{
+    display: block!important;
+}
+.discription{
+  display:none;
+  background-color: rgb(222, 217, 217);
+  color: rgb(0, 0, 0);
+  border-radius: 6px;
+  padding: 5px 5px;
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+  top: 0%;
+  left: 50%;
+  max-width: 40%;
+  margin-left: -60px;
+  transition: 0.3s;
+  padding: 0.5em 1em;
+}
+.task:hover .discription {
+    display:block;
+}
+.complete{
+    position: relative;
+}
+.complete::after{
+    content: "";
+    position: absolute;
+    border: 1px solid black;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 98%;
+}
+.overdue::after{
+    border-color:red ;
+}
+.task input{
+    margin:0 5px;
+}
+
+/*
+.add-button i {
+    font-weight: bold !important; */
+/* } */
