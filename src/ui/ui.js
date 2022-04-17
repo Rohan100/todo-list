@@ -43,10 +43,8 @@ export default class Ui {
     static initializeStorage() {
         Ui.list = []
         if (!localStorage.getItem("todoList")) {
-            [new Project("inbox"), new Project("today"), new Project('tomorrow'), new Project('week')].map(i => {
-                Storage.addProject(i)
-                Ui.list.push(i)
-            })
+            Ui.list = [new Project("inbox"), new Project("today"), new Project('tomorrow'), new Project('week')];
+            Storage.saveTodoList([new Project("inbox"), new Project("today"), new Project('tomorrow'), new Project('week')])
         }
         else {
             Storage.getTodoList().map(i => Ui.list.push(i))
